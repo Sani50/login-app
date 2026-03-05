@@ -6,7 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+// use dynamic port for cloud deployment
+const PORT = process.env.PORT || 5000;
 
 app.get("/test", (req, res) => {
   res.json({ message: "Backend is connected!" });
@@ -23,5 +24,5 @@ app.post("/login", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Server running on port 5000");
+  console.log(`Server running on port ${PORT}`);
 });
