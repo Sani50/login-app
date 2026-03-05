@@ -22,7 +22,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      await axios.post("https://login-backend.onrender.com/login", {
+      await axios.post("https://login-app-a69f.onrender.com/login", {
         username: username,
         password: password
       });
